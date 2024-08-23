@@ -8,8 +8,7 @@ static func wrap_text(input: String, font: Font, size: Vector2):
 	var line =words[0]
 	var i = 1
 	var result = ""
-	
-	print(font.get_height()*2)
+
 	while i < words.size():
 		if font.get_wordwrap_string_size(line,size.x - font.get_height()*2).y   <= height *(1+ line.count("\n")):
 			line += " " + words[i]
