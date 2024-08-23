@@ -17,7 +17,7 @@ func _ready():
 	connect("item_rect_changed",self,"display")
 	
 func _set_arabic_input(s):
-	arabic_input = tr(s)
+	arabic_input = s
 	_on_ALabel_draw()
 
 func _on_ALabel_draw():
