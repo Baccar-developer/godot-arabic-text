@@ -1,5 +1,6 @@
 tool
 extends Label
+class_name ALabelWithAnimation 
 
 const arabic = preload("res://addons/arabic-text/arabic.gd")
 const wordwrap = preload("res://addons/arabic-text/wordwrap/wordwrap.gd")
@@ -15,7 +16,9 @@ signal arabic_input_changed
 func _ready():
 	display()
 	connect("draw", self, "_on_ALabel_draw")
-	connect("resized",self,"_on_ALabel_draw")
+	connect("item_rect_changed",self,"_on_ALabel_draw")
+
+	
 	
 func _set_arabic_input(s):
 	arabic_input = s

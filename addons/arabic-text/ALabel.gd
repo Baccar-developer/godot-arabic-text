@@ -1,5 +1,6 @@
 tool
 extends Label
+class_name ALabel
 
 const arabic = preload("res://addons/arabic-text/arabic.gd")
 const wordwrap = preload("res://addons/arabic-text/wordwrap/wordwrap.gd")
@@ -11,10 +12,10 @@ export(String, MULTILINE) var arabic_input = '' setget _set_arabic_input
 func _ready():
 	display()
 	connect("draw", self, "_on_ALabel_draw")
-	connect("resized",self,"_on_ALabel_draw")
+	connect("item_rect_changed",self,"_on_ALabel_draw")
 	
 func _set_arabic_input(s):
-	arabic_input = s
+	arabic_input = tr(s)
 	_on_ALabel_draw()
 
 func _on_ALabel_draw():
