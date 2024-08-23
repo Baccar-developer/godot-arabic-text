@@ -12,7 +12,9 @@ export(String, MULTILINE) var arabic_input = '' setget _set_arabic_input
 func _ready():
 	display()
 	connect("draw", self, "_on_ALabel_draw")
+	connect("draw", self, "display")
 	connect("item_rect_changed",self,"_on_ALabel_draw")
+	connect("item_rect_changed",self,"display")
 	
 func _set_arabic_input(s):
 	arabic_input = tr(s)
